@@ -1,7 +1,7 @@
 CreateThread(function()-- https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
     while true do
-		HideHudComponentThisFrame(1) -- 1 : WANTED_STARS
-		HideHudComponentThisFrame(2) -- 2 : WEAPON_ICON
+		--HideHudComponentThisFrame(1) -- 1 : WANTED_STARS
+		-- HideHudComponentThisFrame(2) -- 2 : WEAPON_ICON
 		HideHudComponentThisFrame(3) -- 3 : CASH
 		HideHudComponentThisFrame(4) -- 4 : MP_CASH
 		-- HideHudComponentThisFrame(5)			-- 5 : MP_MESSAGE
@@ -13,7 +13,7 @@ CreateThread(function()-- https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
 		-- HideHudComponentThisFrame(11)		-- 11 : FLOATING_HELP_TEXT_1
 		-- HideHudComponentThisFrame(12)		-- 12 : FLOATING_HELP_TEXT_2
 		HideHudComponentThisFrame(13) -- 13 : CASH_CHANGE
-		HideHudComponentThisFrame(14) -- 14 : RETICLE
+		--HideHudComponentThisFrame(14) -- 14 : RETICLE
 		-- HideHudComponentThisFrame(15)		-- 15 : SUBTITLE_TEXT
 		-- HideHudComponentThisFrame(16)		-- 16 : RADIO_STATIONS
 		HideHudComponentThisFrame(17) -- 17 : SAVING_GAME
