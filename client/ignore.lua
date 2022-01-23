@@ -49,11 +49,16 @@ end)
 
 
 CreateThread(function()
-	for i = 1, 15 do
-		EnableDispatchService(i, false)
-	end
-
-	SetMaxWantedLevel(0)
+	--for i = 1, 15 do
+	--	EnableDispatchService(i, true)
+	-- end
+	-- EnableDispatchService(2, false)
+	EnableDispatchService(4, false) -- 	DT_SwatAutomobile
+	EnableDispatchService(10, false)
+	EnableDispatchService(11, false)
+	--EnableDispatchService(12, false) -- 	DT_SwatHelicopter
+	EnableDispatchService(14, false) -- DT_ArmyVehicle
+	--SetMaxWantedLevel(0)
 end)
 
 if Config.IdleCamera then --Disable Idle Cinamatic Cam

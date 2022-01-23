@@ -25,7 +25,8 @@ local vehicleClasses = {
     [21] = false
 }
 
-local function IsTurningOrHandBraking() return IsControlPressed(2, 76) or IsControlPressed(2, 63) or IsControlPressed(2, 64) end
+local function IsHandBraking() return IsControlPressed(2, 76) or IsControlPressed(2, 63) or IsControlPressed(2, 64) end
+local function IsTurning() return IsControlPressed(2, 63) or IsControlPressed(2, 64) end
 local function IsDriving() return IsPedInAnyVehicle(Player, false) end
 local function GetVehicle() return GetVehiclePedIsIn(Player, false) end
 local function IsInVehicle() return GetPedInVehicleSeat(GetVehicle(), -1) end
@@ -46,7 +47,7 @@ local function TriggerCruiseControl()
             CreateThread(function()
                 while CruisedSpeed > 0 and IsInVehicle() == Player do
                     Wait(0)
-                    if not IsTurningOrHandBraking() and GetVehicleSpeed() <
+                    if not IsHandBraking() and GetVehicleSpeed() <
                         (CruisedSpeed - 1.5) then
                         CruisedSpeed = 0
                         TriggerEvent('seatbelt:client:ToggleCruise')
@@ -54,7 +55,7 @@ local function TriggerCruiseControl()
                         Wait(2000)
                         break
                     end
-                    if not IsTurningOrHandBraking() and
+                    if not IsHandBraking() and
                         IsVehicleOnAllWheels(GetVehicle()) and
                         GetVehicleSpeed() < CruisedSpeed then
                         SetVehicleForwardSpeed(GetVehicle(), CruisedSpeed)
