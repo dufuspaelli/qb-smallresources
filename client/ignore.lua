@@ -20,7 +20,7 @@ CreateThread(function() -- all these should only need to be called once
     StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE")
     SetAudioFlag("PoliceScannerDisabled", true)
 	SetGarbageTrucks(false)
-	SetCreateRandomCops(false)
+	SetCreateRandomCops(true)
 	SetCreateRandomCopsNotOnScenarios(false)
 	SetCreateRandomCopsOnScenarios(false)
 	DistantCopCarSirens(false)
@@ -95,4 +95,10 @@ CreateThread(function()
         SetPedDropsWeaponsWhenDead(v, false)
     end
     Wait(500)
+end)
+
+RegisterCommand("dispatchcops", function()
+
+	SetDispatchCopsForPlayer(PlayerId(),true)
+
 end)
