@@ -17,10 +17,11 @@ AddEventHandler("populationPedCreating", function(x, y, z, model)
 end)
 
 CreateThread(function() -- all these should only need to be called once
-    StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE")
-    SetAudioFlag("PoliceScannerDisabled", true)
+   -- StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE")
+    --SetAudioFlag("PoliceScannerDisabled", false)
+	SetAudioFlag("AllowPoliceScannerWhenPlayerHasNoControl", true);
 	SetGarbageTrucks(false)
-	SetCreateRandomCops(true)
+	SetCreateRandomCops(false)
 	SetCreateRandomCopsNotOnScenarios(false)
 	SetCreateRandomCopsOnScenarios(false)
 	DistantCopCarSirens(false)
@@ -49,15 +50,15 @@ end)
 
 
 CreateThread(function()
-	--for i = 1, 15 do
-	--	EnableDispatchService(i, true)
-	-- end
+	for i = 1, 15 do
+		EnableDispatchService(i, false)
+	end
 	-- EnableDispatchService(2, false)
-	EnableDispatchService(4, false) -- 	DT_SwatAutomobile
-	EnableDispatchService(10, false)
-	EnableDispatchService(11, false)
-	--EnableDispatchService(12, false) -- 	DT_SwatHelicopter
-	EnableDispatchService(14, false) -- DT_ArmyVehicle
+	-- EnableDispatchService(4, false) -- 	DT_SwatAutomobile
+	-- EnableDispatchService(10, false)
+	-- EnableDispatchService(11, false)
+	-- EnableDispatchService(12, false) -- 	DT_SwatHelicopter
+	-- EnableDispatchService(14, false) -- DT_ArmyVehicle
 	--SetMaxWantedLevel(0)
 end)
 
@@ -97,8 +98,3 @@ CreateThread(function()
     Wait(500)
 end)
 
-RegisterCommand("dispatchcops", function()
-
-	SetDispatchCopsForPlayer(PlayerId(),true)
-
-end)

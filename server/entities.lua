@@ -16,7 +16,7 @@ AddEventHandler("entityCreated", function(handle)
     if Config.BlacklistedPeds[entityModel] then
         --print(source)
         RemoveAllPedWeapons(handle, 1)
-        -- SetPedConfigFlag(handle,272,1) -- remove cop blips
+        SetPedConfigFlag(handle,272,1) -- remove cop blips
 
         GiveWeaponToPed(handle, "WEAPON_STUNGUN", 1, false, true)
        -- SetPedCombatAttributes(handle, 5, false)
