@@ -21,7 +21,7 @@ CreateThread(function() -- all these should only need to be called once
     --SetAudioFlag("PoliceScannerDisabled", false)
 	DisablePlayerVehicleRewards(PlayerId())
 	SetAudioFlag("AllowPoliceScannerWhenPlayerHasNoControl", true);
-	SetGarbageTrucks(false)
+	SetGarbageTrucks(true)
 	SetCreateRandomCops(false)
 	SetCreateRandomCopsNotOnScenarios(false)
 	SetCreateRandomCopsOnScenarios(false)
